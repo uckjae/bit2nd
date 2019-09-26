@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>GitChung</name>
+=======
+	<name>Git</name>
+>>>>>>> 871fa7717254c012d0f4396e41c2515094f05145
 	<comment></comment>
 	<projects>
 	</projects>
