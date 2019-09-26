@@ -9,10 +9,10 @@ import java.util.ArrayList;
 public class Main_lee {
 	
 	public static void commonFandM(int a, int b) {
-		ArrayList<Integer> decimal = new ArrayList<Integer>();//¼Ò¼ö¸¦ ´ãÀ» ArrayList
-		int big = (a>b)?a:b; //ÀÔ·ÂµÈ µÎ ¼öÁß Å«¼ö 
+		ArrayList<Integer> decimal = new ArrayList<Integer>();//ì†Œìˆ˜ë¥¼ ë‹´ì„ ArrayList
+		int big = (a>b)?a:b; //ì…ë ¥ëœ ë‘ ìˆ˜ì¤‘ í°ìˆ˜ 
 		decimal.add(2);
-		for(int i = 3; i<big; i++) {//Å« ¼ö ±îÁö ÀÖ´Â ¼Ò¼ö¸¦ ±¸ÇÏ¿© ArrayList¿¡ add
+		for(int i = 3; i<big; i++) {//í° ìˆ˜ ê¹Œì§€ ìˆëŠ” ì†Œìˆ˜ë¥¼ êµ¬í•˜ì—¬ ArrayListì— add
 			for(int j=2; j<i; j++) {
 				if(j!=i-1 && i%j==0) {
 					break;
@@ -22,24 +22,24 @@ public class Main_lee {
 				}
 			}
 		}
-		int max = 1;//ÃÖ´ë°ø¾à¼ö
-		int min = 1;//ÃÖ¼Ò°ø¹è¼ö
+		int max = 1;//ìµœëŒ€ê³µì•½ìˆ˜
+		int min = 1;//ìµœì†Œê³µë°°ìˆ˜
 		int n = a;
 		int m = b;
 		boolean end = false;
 		int i = 0;
 		while(!end) {
-			if(n%decimal.get(i)==0 && m%decimal.get(i)==0 ) {// a b ÀÇ °øÅë ¼ÒÀÎ¼ö¶ó¸é
-				max*=decimal.get(i);//ÃÖ´ë°ø¾à¼ö´Â °øÅë ¼ÒÀÎ¼öÀÇ °ö
-				n/=decimal.get(i);//¼ÒÀÎ¼öºĞÇØ
+			if(n%decimal.get(i)==0 && m%decimal.get(i)==0 ) {// a b ì˜ ê³µí†µ ì†Œì¸ìˆ˜ë¼ë©´
+				max*=decimal.get(i);//ìµœëŒ€ê³µì•½ìˆ˜ëŠ” ê³µí†µ ì†Œì¸ìˆ˜ì˜ ê³±
+				n/=decimal.get(i);//ì†Œì¸ìˆ˜ë¶„í•´
 				m/=decimal.get(i);
 				continue;
-			}else if(n<=decimal.get(i) || m<=decimal.get(i)){//¼Ò¼öÀÇ Å©±âº¸´Ù ³ª´²Áú ¼öÀÇ °ªÀÌ ÀÛ´Ù¸é ¼ÒÀÎ¼öºĞÇØ stop
+			}else if(n<=decimal.get(i) || m<=decimal.get(i)){//ì†Œìˆ˜ì˜ í¬ê¸°ë³´ë‹¤ ë‚˜ëˆ ì§ˆ ìˆ˜ì˜ ê°’ì´ ì‘ë‹¤ë©´ ì†Œì¸ìˆ˜ë¶„í•´ stop
 				end = true;//stop
-				min = max*n*m;//ÃÖ¼Ò°ø¹è¼ö=ÃÖ´ë°ø¾à¼ö*°øÅë¼ÒÀÎ¼ö
+				min = max*n*m;//ìµœì†Œê³µë°°ìˆ˜=ìµœëŒ€ê³µì•½ìˆ˜*ê³µí†µì†Œì¸ìˆ˜
 				continue;
 			}else {
-				i++;//°øÅë¼ÒÀÎ¼ö°¡ ¾Æ´Ï¶ó¸é ´ÙÀ½ ¼Ò¼ö·Î È®ÀÎ
+				i++;//ê³µí†µì†Œì¸ìˆ˜ê°€ ì•„ë‹ˆë¼ë©´ ë‹¤ìŒ ì†Œìˆ˜ë¡œ í™•ì¸
 			}
 		}
 		
