@@ -12,7 +12,7 @@ public class Bank_Main {
 		bk.addAccount("194-242-303-430", "원보현"); //계좌생성
 		bk.addAccount("151-249-374-474", "최경열"); //계좌생성
 		
-		for(Account ac : bk.getAccounts()) {
+		for(Account ac : bk.getAccounts()) { //계좌 목록 확인 
 			System.out.println(ac.getAccountNo()+" /" + ac.getName()); 
 		}
 		System.out.println(); // 공백 추가 
@@ -31,8 +31,9 @@ public class Bank_Main {
 		for(int i =0; i < tr.size(); i++) {
 			System.out.println(tr.get(i));
 		}
-		
-		
+		System.out.println();
+		System.out.println("계좌 수 확인 " + bk.getTotalAccount());
+		System.out.println();
 		
 		
 		

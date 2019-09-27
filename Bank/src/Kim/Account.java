@@ -23,9 +23,11 @@ public class Account {
 	}
 	
 	public void withdraw(long amount) { //출금 
+		SimpleDateFormat ss = new SimpleDateFormat("YYY년MM월 E요일");
+		SimpleDateFormat ss2 = new SimpleDateFormat("HH시 mm분 ss초");
 		if(balance >= amount) { // 잔액이 출금액과 같거나 크면 
 			this.balance -= amount; // 잔액에서 출금액을 뺀다
-			transactions.add();
+			transactions.add(new Transaction(ss, ss2, amount, balance, "출금"));
 		}else { // if 조건이 만족을 못하면 잔액이 안빠진다
 			System.out.println("잔액이 부족합니다");
 		}
