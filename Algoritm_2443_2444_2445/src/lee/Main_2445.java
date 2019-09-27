@@ -11,6 +11,7 @@ public class Main_2445 {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
+		if(n<1) return;
 		for(int i=1; i<=2*n-1;i++) {
 			if(i<n) {
 				for(int j=1; j<=i;j++) {
