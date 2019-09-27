@@ -33,7 +33,7 @@ public class Account {
 	}
 
 	public void withdraw(long amount) {
-		if (balance - amount > 0) {
+		if (balance >= amount) {
 			balance -= amount;
 			Transaction transaction = new Transaction(MyCalendar.date(), MyCalendar.time(), "출금", amount, balance);
 			transactions.add(transaction);
