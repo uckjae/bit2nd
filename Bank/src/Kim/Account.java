@@ -16,15 +16,15 @@ public class Account {
 	
 	public void deposit(long amount) { //입금
 		ArrayList<Transaction> tr = new ArrayList<Transaction>();
-		SimpleDateFormat ss = new SimpleDateFormat("YYY년MM월 E요일");
-		SimpleDateFormat ss2 = new SimpleDateFormat("HH시 mm분 ss초");
+		SimpleDateFormat ss = new SimpleDateFormat("YYY년MM월 E요일"); //날짜 생성
+		SimpleDateFormat ss2 = new SimpleDateFormat("HH시 mm분 ss초"); //시간 생성
 		this.balance += amount; // 잔액에 입금액을 누적 
 		tr.add(new Transaction(ss, ss2, "입금", balance, amount));
 	}
 	
 	public void withdraw(long amount) { //출금 
-		SimpleDateFormat ss = new SimpleDateFormat("YYY년MM월 E요일");
-		SimpleDateFormat ss2 = new SimpleDateFormat("HH시 mm분 ss초");
+		SimpleDateFormat ss = new SimpleDateFormat("YYY년MM월 E요일"); //날짜 생성 
+		SimpleDateFormat ss2 = new SimpleDateFormat("HH시 mm분 ss초"); //시간 생성
 		if(balance >= amount) { // 잔액이 출금액과 같거나 크면 
 			this.balance -= amount; // 잔액에서 출금액을 뺀다
 			transactions.add(new Transaction(ss, ss2, "출금" ,amount,balance));

@@ -13,7 +13,7 @@ public class Bank_Main {
 		bk.addAccount("151-249-374-474", "최경열"); //계좌생성
 		
 		for(Account ac : bk.getAccounts()) { //계좌 목록 확인 
-			System.out.println(ac.getAccountNo()+" /" + ac.getName()); 
+			System.out.println(ac.getAccountNo()+" /" + ac.getName()); //계좌번호 , 이름 확인  
 		}
 		System.out.println(); // 공백 추가 
 		ArrayList<Account> aa = bk.findAccounts("김일겸"); //이름으로 계좌찾고 리스트에 저장 
@@ -25,24 +25,19 @@ public class Bank_Main {
 		System.out.println("검색 한  계좌번호  : " + aa2.getAccountNo() +"/"+ aa2.getName()); //찾을려는 계좌번호와 해당하는 계좌번호의 이름 출력
 		
 		
-		aa2.deposit(10000);
+		aa2.deposit(10000); //입금 
 		aa2.deposit(20000);
 		System.out.println();
-		System.out.println("입금확인 : " + aa2.getBalance());
+		System.out.println("입금확인 : " + aa2.getBalance()); // 입금확인 출력문 
 		System.out.println();
 		
 		System.out.println();
-		ArrayList<Transaction> tr = aa2.getTransactions();
-		for(int i =0; i < tr.size(); i++) {
-			System.out.println("거래내역 : " + tr.get(i).toString());
-		}
-		
 		
 		aa2.withdraw(5000); //출금
-		System.out.println("출금 후 : " + aa2.getBalance()); //출금 
+		System.out.println("출금 후 : " + aa2.getBalance()); //출금 출력문
 		
 		System.out.println();
-		System.out.println("계좌 수 확인 " + bk.getTotalAccount());
+		System.out.println("계좌 수 확인 " + bk.getTotalAccount());// 총계좌수 
 		System.out.println();
 		
 		
