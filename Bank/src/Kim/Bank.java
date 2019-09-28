@@ -6,8 +6,8 @@ public class Bank {
 	private ArrayList<Account> accounts;
 	private int totalAccount; // �Ѱ��¼�
 
-	public Bank() {
-		accounts = new ArrayList<Account>();
+	public Bank() { //생성자 
+		accounts = new ArrayList<Account>(); //초기화 하기위해 new 
 		
 	}
 

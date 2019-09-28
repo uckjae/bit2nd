@@ -9,7 +9,7 @@ public class Transaction {
 	private long amount; // 거래금액
 	private long balance; // 잔액 
 	
-	public Transaction(SimpleDateFormat ss, SimpleDateFormat ss2, long amount, long balance, String kind) { //생성자 초기화하기 위해 생성
+	public Transaction(SimpleDateFormat ss, SimpleDateFormat ss2,String kind, long amount, long balance) { //생성자 초기화하기 위해 생성
 		this.transactionDate = ss; // 거래 날짜 초기화
 		this.transactionTime = ss2; // 거래 시간 초기화
 		this.amount = amount; // 거래금액 초기화

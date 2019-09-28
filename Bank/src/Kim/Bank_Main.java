@@ -18,19 +18,29 @@ public class Bank_Main {
 		System.out.println(); // 공백 추가 
 		ArrayList<Account> aa = bk.findAccounts("김일겸"); //이름으로 계좌찾고 리스트에 저장 
 		for(int i= 0; i<aa.size(); i++) { // 리스트를 돌아서 
-			System.out.println(aa.get(i).getName()); // i번째에 있는 찾을려는 이름을 출력 
+			System.out.println(aa.get(i).getName() + "/" + aa.get(i).getAccountNo()); // i번째에 있는 찾을려는 이름을 출력 
 		}		
 		 System.out.println(); //공백추가 
 		Account aa2 = bk.getAccount("950-050-060-123"); //계좌번호로 계좌 찾기 
 		System.out.println("검색 한  계좌번호  : " + aa2.getAccountNo() +"/"+ aa2.getName()); //찾을려는 계좌번호와 해당하는 계좌번호의 이름 출력
 		
 		
-		aa.get(0).deposit(10000);
+		aa2.deposit(10000);
+		aa2.deposit(20000);
+		System.out.println();
+		System.out.println("입금확인 : " + aa2.getBalance());
+		System.out.println();
 		
-		ArrayList<Transaction> tr = new ArrayList<Transaction>();
+		System.out.println();
+		ArrayList<Transaction> tr = aa2.getTransactions();
 		for(int i =0; i < tr.size(); i++) {
-			System.out.println(tr.get(i));
+			System.out.println("거래내역 : " + tr.get(i).toString());
 		}
+		
+		
+		aa2.withdraw(5000); //출금
+		System.out.println("출금 후 : " + aa2.getBalance()); //출금 
+		
 		System.out.println();
 		System.out.println("계좌 수 확인 " + bk.getTotalAccount());
 		System.out.println();
