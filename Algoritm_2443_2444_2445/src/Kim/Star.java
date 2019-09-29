@@ -3,11 +3,21 @@ package Kim;
 public class Star {
 
 	public static void main(String[] args) {
-	for(int a=1;a<=5; a++ ) {
-		for(int b=0;b<=5-1; b++) {
+	for(int a=1;a<=4; a++ ) { //열의 공백의 수 
+		for(int b=1;b<=4-a; b++) {//행의 공백의 수 
 			System.out.print(" ");
 		}
-		for(int c=1;c<=a*2-1;c++) { //행을 1개에서 2개씩 늘린다. 1개부터 시작하기위해 -1
+		for(int c=1;c<=a*2-1;c++) {// 공백을 찍은 나머지 공간에 별을 찍음
+			System.out.print("*");
+		}
+		System.out.println();
+	}
+	for(int d = 3;d>=1;d--) { //열의 공백 수 
+		for(int e=1;e<=4-d;e++) { //행의 공백 수 
+			System.out.print(" ");
+		}
+		
+		for(int f =1;f<=d*2-1;f++) {//공백을 찍고 나머지 공간에 별을 찍음 
 			System.out.print("*");
 		}
 		System.out.println();
