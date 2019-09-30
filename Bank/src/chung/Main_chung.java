@@ -12,7 +12,7 @@ public class Main_chung {
 		System.out.println(bank.getAccount("110-987-347655").getBalance());
 		System.out.println(bank.getAccount("110-987-347655").getTransactions());
 		bank.getAccount("110-987-347655").withdraw(20000);
-		System.out.println(bank.getAccount("110-987-347655").getTransactions());		
+		//System.out.println(bank.getAccount("110-987-347655").getTransactions());		
 	}
 }
 
