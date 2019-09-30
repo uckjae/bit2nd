@@ -11,7 +11,7 @@ public class Star2443 {
 			for(int j=0;j<i;j++) {
 				System.out.print(" ");
 			}
-			for(int j = 0;j < 2*(5-i)-1 ;j++) {
+			for(int j = 0;j < 2*(num-i)-1 ;j++) {
 				System.out.print("*");
 			}
 			System.out.println();
