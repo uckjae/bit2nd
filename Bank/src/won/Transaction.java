@@ -1,5 +1,6 @@
 package won;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Transaction {
@@ -37,7 +38,6 @@ public class Transaction {
 	public String getKind() {
 		return kind;
 	}
-	
 	public static String DateString(Calendar date) {
 		return date.get(Calendar.YEAR) + "년"
 				+ date.get(Calendar.MONTH) + "월"
@@ -58,3 +58,5 @@ public class Transaction {
 				+ kind + ", 금액 : " + amount + ", 잔액 : " + balance + "\n";
 	}
 }
+
+//eturn new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
