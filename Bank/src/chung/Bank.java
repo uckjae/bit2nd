@@ -26,10 +26,9 @@ public class Bank {
 		for(Account account : accounts) {
 			if(account.getName().equals(name)) {
 				newList.add(account);
-				return newList; 
 			}
 		}
-		return null;		
+		return newList;		
 	}
 	ArrayList<Account> getAccounts(){
 		return accounts;	
