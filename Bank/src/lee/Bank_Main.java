@@ -6,7 +6,7 @@ public class Bank_Main  {
 
         bit.addAccount("123456789","이욱재");
         bit.addAccount("123456789","이정현");
-
+        bit.addAccount("123456789", "이욱재");
 
     }
 }
