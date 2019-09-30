@@ -18,8 +18,8 @@ public class Star {
 			}
 			System.out.println();
 		}
-		for (int d = 4; d >= 1; d--) { // 열의 공백 수
-			for (int e = 1; e <= h - d; e++) { // 행의 공백 수
+		for (int d = g; d >= 1; d--) { // 열의 공백 수
+			for (int e = 0; e <= g - d; e++) { // 행의 공백 수
 				System.out.print(" ");
 			}
 
