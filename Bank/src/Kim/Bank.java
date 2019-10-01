@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Bank {
 	private ArrayList<Account> accounts;
-	private int totalAccount; // �Ѱ��¼�
+	private int totalAccount; // 총계좌수
 
 	public Bank() { //생성자 
 		accounts = new ArrayList<Account>(); //초기화 하기위해 new 
@@ -31,7 +31,7 @@ public class Bank {
 		ArrayList<Account> namefind = new ArrayList<Account>(); // 리스트를 초기화 Account 타입이며 초기화 하기 위해 생성 
 		for (int i = 0; i < accounts.size(); i++) { // 리스트 사이즈 만큼 방을 돌음 
 			if (accounts.get(i).getName().equals(name)) { // 리스트에 있는 이름을 가져와서 내가 찾는 이름과 같으면 
-				namefind.add(accounts.get(i)); // 동명 이인이 많을 수도 있어서 리스트에 저장 ㄴㄴㄴㄴ
+				namefind.add(accounts.get(i)); // 동명 이인이 많을 수도 있어서 리스트에 저장 
 			}
 		}
 

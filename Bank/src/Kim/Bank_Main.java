@@ -23,18 +23,16 @@ public class Bank_Main {
 		 System.out.println(); //공백추가 
 		Account aa2 = bk.getAccount("950-050-060-123"); //계좌번호로 계좌 찾기 
 		System.out.println("검색 한  계좌번호  : " + aa2.getAccountNo() +"/"+ aa2.getName()); //찾을려는 계좌번호와 해당하는 계좌번호의 이름 출력
-		
+		System.out.println();
 		
 		aa2.deposit(10000); //입금 
 		aa2.deposit(20000);
-		System.out.println();
-		System.out.println("입금확인 : " + aa2.getBalance()); // 입금확인 출력문 
-		System.out.println();
-		
-		System.out.println();
-		
 		aa2.withdraw(5000); //출금
-		System.out.println("출금 후 : " + aa2.getBalance()); //출금 출력문
+		ArrayList<Transaction> tr = aa2.getTransactions(); //거래내역의 return 값을 리스트에 저장
+		for (int i = 0; i<tr.size();i++) { //리스트에 있는것을 하나씩 확인
+			System.out.println(tr.get(i).toString()); //i번째 내역을 확인하고 오버라이드를 한 것을 출력
+		}
+
 		
 		System.out.println();
 		System.out.println("계좌 수 확인 " + bk.getTotalAccount());// 총계좌수 
