@@ -13,35 +13,28 @@ public class Sugar {
 		int sugar = scan.nextInt();
 		int sugar5kg = 5;
 		int sugar3kg = 3;
-		int deli = 0;
-		int very = 0;
+		int delivery = 0;
 		if(sugar % sugar5kg == 0) {
-			System.out.println("첫번째 if");
-			deli = sugar / sugar5kg;
+			delivery = sugar / sugar5kg;
 			return;
 		}else {
-			System.out.println("첫번째 if의 else");
 			int quotient = sugar / sugar5kg;
 			for(int i = quotient; i > 0; i--) {
-				System.out.println("for : " + i);
 				int rest = sugar - (i * 5);
 				if(rest % sugar3kg == 0) {
-					System.out.println("for 안에 if");
 					int j = rest / sugar3kg;
-					deli = i + j;
+					delivery = i + j;
+					System.out.println("최소값 : " + delivery);
 					return;
 				}
-			}System.out.println("for문 끝나고");
-		}System.out.println("첫번째 if 끝나고");
-		if(sugar % sugar3kg == 0) {
-			System.out.println("두번째 if");
-			very = sugar / sugar3kg;
-			return;
-		}else {
-			System.out.println("두번째 if");
-			very = -1;
+			}
 		}
-		System.out.println("최소값 : " + (deli + very));
-		System.out.println("대체 어디서 안되는거야?");
+		if(sugar % sugar3kg == 0) {
+			delivery = sugar / sugar3kg;
+			
+		}else {
+			delivery = -1;
+		}
+		System.out.println("최소값 : " + (delivery));
 	}
 }
