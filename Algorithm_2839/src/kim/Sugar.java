@@ -8,28 +8,21 @@ public class Sugar {
 		Scanner sc = new Scanner(System.in);
 	
 		int input = sc.nextInt();
-		if(input % 5 == 0) {
-			int sugar2 = input / 5;
-				System.out.println("5KG : " + sugar2);
-				if(input % 3 == 0 ) {
-					int three1 = input / 3;
-					System.out.println("3KG : " + three1);
-				if(three1 > sugar2) {
-					System.out.println("5KG : " + sugar2);
-				}if(three1 < sugar2) {
-					System.out.println("3KG : " + three1);
-				}
-				if(input % 3 == 0) {
-					int three3 = input / 3;
-					System.out.println("3KG : " + three3);
-					}
-				}
-		}	
-		if(input % 5 !=0) {
-			int five1 = input / 5;
-			if(five1 !=0) {
-				int three = five1 / 3;
-				System.out.println(five1+ "-" + three);
+	    int three = 0; 
+	    int five = 0;
+	    
+	   
+	    while(input % 5 !=0 && input >= 0) { //입력한 값이 5로 나눠서 나머지가 0이 아니거나 입력한 값이 0보다 같거나 크면
+	      input -=3; // 입력한 값에서 3을 빼준다 
+	      three++; //3kg 누적 
+	      
+	    }
+	    
+	    five = input < 0 ? -1 : three + input/5; // five가 입력한 값이 0 보다 작을경우 -1로 가고 false면 뒤에 식으로 들어간다.
+	    System.out.println(five);
+		
+	    
+		
 			}
 		}
 		
@@ -38,6 +31,3 @@ public class Sugar {
 		
 		
 		
-
-	}
-}
