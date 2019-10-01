@@ -50,15 +50,25 @@ public class Account_lee {
 
 
 	}
+	
+	
 
 	@Override
 	public String toString() {
 		return "Account Number" + accountNo + "Name" + name + "Balance" + balance;
 	}
-
-	public boolean equals(Account_lee account) {
+	@Override
+	public boolean equals(Object obj) {
 		boolean result = false;
-		result = (this.accountNo.equals(account.accountNo))?true:false;
+		Account_lee newAccount = null;
+		if (obj instanceof Account_lee) {
+			newAccount = (Account_lee)obj;
+			
+		}else {
+			result = false;
+		}
+		
+		result = (this.accountNo.equals(newAccount.accountNo))?true:false;
 		return result;
 	}
 }
