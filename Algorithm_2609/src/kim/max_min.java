@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class max_min {
 
 	public static void main(String[] args) {
-		int mok = 0;
+		int mok = 1;
 		int c = 0;
 		int d = 0;
 		int min = 0;
@@ -16,8 +16,8 @@ public class max_min {
 		int b = Integer.parseInt(sc.nextLine());
 
 		for (int i = 2; i < 100; i++) { // 소인수 분해 처럼 2 부터 증가해서 if문을 탄다
-			if (a % i == 0 && b % i == 0) { // a , b가 i랑 나눠서 나머지가 0이라면
-				mok = i; // 몫을 저장
+			while(a % i == 0 && b % i == 0) { // a , b가 i랑 나눠서 나머지가 0이라면
+				mok = 1*i; 
 
 			}
 		}
@@ -29,6 +29,8 @@ public class max_min {
 		min = mok * c * d; // 최소공배수 식
 
 		System.out.println("최소공배수 : " + min);
-
+		
+		if(a >)
+		
 	}
 }
