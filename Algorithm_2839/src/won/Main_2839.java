@@ -11,6 +11,7 @@ public class Main_2839 {
 		int delivery = 0;
 		if(sugar % sugar5kg == 0) { // 1 X
 			delivery = sugar / sugar5kg; 
+			//System.out.println("최소값 : " + delivery);
 			return;
 		}else {
 			int quotient = sugar / sugar5kg; // 나눈 몫  // 8
@@ -19,17 +20,16 @@ public class Main_2839 {
 				if(rest % sugar3kg == 0) { // 1 X // 6 O
 					int j = rest / sugar3kg; 
 					delivery = i + j; // i(5kg) = 7, j(3kg) = 2 // 7 + 2 
-					System.out.println("최소값 : " + delivery); // 9
+					//System.out.println("최소값 : " + delivery); // 9
 					return;
 				}
 			}
 		}
 		if(sugar % sugar3kg == 0) {
 			delivery = sugar / sugar3kg;
-			
 		}else {
 			delivery = -1;
 		}
-		System.out.println("최소값 : " + (delivery));
+		//System.out.println("최소값 : " + (delivery));
 	}
 }
