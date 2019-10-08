@@ -9,10 +9,8 @@ public class Main_won {
 		int L = 0;
 		int high = 0;
 		int low = 0;
-		System.out.print("첫번째 수 : ");
+		
 		int a = scan.nextInt();
-		scan.nextLine();
-		System.out.print("두번째 수 : "); 
 		int b = scan.nextInt();
 		
 		if(a > b) {
@@ -28,10 +26,10 @@ public class Main_won {
 			high = low;
 			low = R;
 		}
-		System.out.println("high값 : "+high);
 		
 		L = (a * b) / high;
 		
-		System.out.println("최대공약수 : " + L + "\t 최대공약수 : " + high);
+		System.out.println(high);
+		System.out.println(L);
 	}
 }
