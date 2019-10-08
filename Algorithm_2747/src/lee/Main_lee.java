@@ -18,16 +18,22 @@ n이 주어졌을 때, n번째 피보나치 수를 구하는 프로그램을 작성하시오.
 첫째 줄에 n번째 피보나치 수를 출력한다.
  */
 
-import java.util.ArrayList;
+
+import java.util.Scanner;
 
 public class Main_lee {
-    public static ArrayList<Integer> mkFibo(int n ){
-        
-
-
-        return null;
+    public static int mkFibo(int n ){
+        int[] fibo = new int[n+1];
+        fibo[0]=0;
+        fibo[1]=1;
+        for(int i=2; i<fibo.length; i++){
+            fibo[i]=fibo[i-1]+fibo[i-2];
+        }
+        return fibo[n];
     }
     public static void main(String[] args) {
-
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(mkFibo(n));
     }
 }
