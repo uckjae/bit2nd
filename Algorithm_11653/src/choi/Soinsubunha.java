@@ -6,7 +6,6 @@ public class Soinsubunha {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("ют╥б:");
 		int n = sc.nextInt();
 		int num=0;
 		
