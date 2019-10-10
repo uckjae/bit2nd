@@ -1,6 +1,7 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+package won;
 
+import java.util.Scanner;
+import java.util.ArrayList;
 public class Main_9506 {
 	public static void perfectNumber(Integer number) {
 		ArrayList<Integer> pmList = new ArrayList<Integer>();
