@@ -15,7 +15,7 @@ public class Main {
 			sum = a+b; //a + b를 sum에 넣고 
 			b = a; //a에 있는 값을 b로 넘기고 
 			a = sum; //sum에 있는 값을 a로 넘긴다.
-			
+			//System.out.print(sum);
 		}
 		System.out.print(sum);
 	}
