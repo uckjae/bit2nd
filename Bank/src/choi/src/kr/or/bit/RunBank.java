@@ -1,4 +1,4 @@
-package kr.or.bit;
+package choi.src.kr.or.bit;
  
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -7,16 +7,16 @@ public class RunBank {
    Bank b = new Bank();
    
    public void console() {
-      System.out.println("1. °èÁÂ»ý¼º");
-      System.out.println("2. °èÁÂÀÔ±Ý");
-      System.out.println("3. °èÁÂÃâ±Ý");
-      System.out.println("4. °èÁÂÃ£±â(°èÁÂ¹øÈ£)");
-      System.out.println("5. °èÁÂÃ£±â(¼ÒÀ¯ÀÚ¸í)");
-      System.out.println("6. °èÁÂ¸ñ·Ï");
-      System.out.println("7. ÃÑ°èÁÂ¼ö");
-      System.out.println("8. ½Ã½ºÅÛÁ¾·á");
-      System.out.println("9. Æ®·£Àè¼Ç È®ÀÎ");
-      System.out.println("1~9±îÁöÁß¿¡ ´­·¯ÁÖ¼¼¿ä");
+      System.out.println("1. ï¿½ï¿½ï¿½Â»ï¿½ï¿½ï¿½");
+      System.out.println("2. ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½");
+      System.out.println("3. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+      System.out.println("4. ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½(ï¿½ï¿½ï¿½Â¹ï¿½È£)");
+      System.out.println("5. ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½)");
+      System.out.println("6. ï¿½ï¿½ï¿½Â¸ï¿½ï¿½");
+      System.out.println("7. ï¿½Ñ°ï¿½ï¿½Â¼ï¿½");
+      System.out.println("8. ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+      System.out.println("9. Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½");
+      System.out.println("1~9ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½");
    }
    public void run() {
       String s;
@@ -30,54 +30,54 @@ public class RunBank {
          s=sc.nextLine();
          switch (s) {
          case "1":
-            System.out.println("°èÁÂ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+            System.out.println("ï¿½ï¿½ï¿½Â¹ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½");
             accountNo = sc.nextLine();
-            System.out.println("ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+            System.out.println("ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½");
             name = sc.nextLine();
             b.addAccount(accountNo, name);
             break;
          case "2":
-            System.out.println("°èÁÂ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+            System.out.println("ï¿½ï¿½ï¿½Â¹ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½");
             accountNo = sc.nextLine();
-            System.out.println("ÀÔ±ÝÇÒ ±Ý¾×À» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+            System.out.println("ï¿½Ô±ï¿½ï¿½ï¿½ ï¿½Ý¾ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½");
             money = Integer.parseInt(sc.nextLine());
             b.getAccount(accountNo).deposit(money);
             break;
          case "3":
-            System.out.println("°èÁÂ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+            System.out.println("ï¿½ï¿½ï¿½Â¹ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½");
             accountNo = sc.nextLine();
-            System.out.println("Ãâ±ÝÇÒ ±Ý¾×À» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+            System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¾ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½");
             money = Integer.parseInt(sc.nextLine());
             b.getAccount(accountNo).withdraw(money);
             break;
          case "4":
-            System.out.println("°èÁÂ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+            System.out.println("ï¿½ï¿½ï¿½Â¹ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½");
             accountNo = sc.nextLine();
             System.out.println(b.getAccount(accountNo));
             break;
          case "5":
-            System.out.println("ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+            System.out.println("ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½");
             name = sc.nextLine();
             System.out.println(b.findAccounts(name));
             break;
          case "6":
-            System.out.println("°èÁÂ¸ñ·ÏÀ» Ãâ·ÂÇÕ´Ï´Ù.");
+            System.out.println("ï¿½ï¿½ï¿½Â¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
             System.out.println(b.getAccounts());
             break;
          case "7":
-            System.out.println("ÃÑ °èÁÂ¼ö¸¦ Ãâ·ÂÇÕ´Ï´Ù.");
+            System.out.println("ï¿½ï¿½ ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
             System.out.println(b.getTotalAccount());
             break;
          case "8":
-            System.out.println("¾È³çÈ÷°¡¼¼¿ä^^");
+            System.out.println("ï¿½È³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½^^");
             System.exit(0);
          case "9":
-            System.out.println("°èÁÂ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+            System.out.println("ï¿½ï¿½ï¿½Â¹ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½");
             accountNo = sc.nextLine();
             System.out.println(b.getAccount(accountNo).getTransactions());
             break;
          default:
-            System.out.println("1~9±îÁö¸¸ ÀÔ·ÂÇÏ¼¼¿ä...^^");
+            System.out.println("1~9ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½...^^");
             break;
          }
       }while(true);

@@ -1,37 +1,37 @@
-package kr.or.bit;
+package choi.src.kr.or.bit;
 
 import java.util.ArrayList;
 
-public class Account {//***°èÁÂ***
-	private String accountNo;//°èÁÂ¹øÈ£
-	private String name;//ÀÌ¸§
-	private long balance;   //ÀÜ°í
-	private ArrayList<Transaction> transactions;//°Å·¡³»¿ª
+public class Account {//***ï¿½ï¿½ï¿½ï¿½***
+	private String accountNo;//ï¿½ï¿½ï¿½Â¹ï¿½È£
+	private String name;//ï¿½Ì¸ï¿½
+	private long balance;   //ï¿½Ü°ï¿½
+	private ArrayList<Transaction> transactions;//ï¿½Å·ï¿½ï¿½ï¿½ï¿½ï¿½
 
-	public Account(String accountNo, String name) {//bank ¹Þ±âÀ§ÇÑ
+	public Account(String accountNo, String name) {//bank ï¿½Þ±ï¿½ï¿½ï¿½ï¿½ï¿½
 		this.accountNo=accountNo;
 		this.name=name;
 		this.balance=this.balance;
 		this.transactions=new ArrayList<Transaction>(); 	
 	}
 
-	public void deposit(long amount) {//ÀÔ±Ý
+	public void deposit(long amount) {//ï¿½Ô±ï¿½
 		this.balance=this.balance+amount;
-		this.transactions.add(new Transaction("ÀÔ±Ý",amount,this.balance));
-		System.out.println(this.name+"´Ô"+amount+"ÀÔ±ÝµÇ¾ú½À´Ï´Ù.");
+		this.transactions.add(new Transaction("ï¿½Ô±ï¿½",amount,this.balance));
+		System.out.println(this.name+"ï¿½ï¿½"+amount+"ï¿½Ô±ÝµÇ¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 	}
-	public void withdraw(long amount) {//Ãâ±Ý
+	public void withdraw(long amount) {//ï¿½ï¿½ï¿½
 		if(this.balance>=amount) {
 			this.balance-=amount;
-			this.transactions.add(new Transaction("Ãâ±Ý", amount, this.balance));
-			System.out.println(this.name+"´Ô"+amount+"Ãâ±ÝµÇ¾ú½À´Ï´Ù");   	
+			this.transactions.add(new Transaction("ï¿½ï¿½ï¿½", amount, this.balance));
+			System.out.println(this.name+"ï¿½ï¿½"+amount+"ï¿½ï¿½ÝµÇ¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½");   	
 		}else
-			System.out.println("ÀÜ°í°¡ ºÎÁ·ÇÕ´Ï´Ù.");
+			System.out.println("ï¿½Ü°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 	}
-	public long getBalance() {//ÀÜ°íÈ®ÀÎ
+	public long getBalance() {//ï¿½Ü°ï¿½È®ï¿½ï¿½
 		return balance;
 	}
-	public ArrayList<Transaction>getTransactions(){//°Å·¡³»¿ªº¸±â
+	public ArrayList<Transaction>getTransactions(){//ï¿½Å·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		return transactions;
 	}
 
@@ -44,7 +44,7 @@ public class Account {//***°èÁÂ***
 
 	@Override
 	public String toString() {
-			return "°èÁÂ¹øÈ£=" + accountNo + " / ¼º¸í=" + name + " / ÀÜ¾×=" + balance + " / Æ®·£Àè¼Ç="
+			return "ï¿½ï¿½ï¿½Â¹ï¿½È£=" + accountNo + " / ï¿½ï¿½ï¿½ï¿½=" + name + " / ï¿½Ü¾ï¿½=" + balance + " / Æ®ï¿½ï¿½ï¿½ï¿½ï¿½="
 					+ transactions;
 		}
 
