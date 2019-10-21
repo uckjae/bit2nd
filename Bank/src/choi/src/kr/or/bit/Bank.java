@@ -1,28 +1,28 @@
-package kr.or.bit;
+package choi.src.kr.or.bit;
 
 import java.util.ArrayList;
 
 public class Bank {
-	private ArrayList<Account>accounts;//°èÁÂ
+	private ArrayList<Account>accounts;//ï¿½ï¿½ï¿½ï¿½
 	private int totalAccount;
 	
 	public Bank() {
 		this.accounts = new ArrayList<Account>();
 	}
 	
-	public void addAccount(String accountNo, String name) {//°èÁÂ»ý¼º
-		this.accounts.add(new Account(accountNo,name));//°èÁÂ¹øÈ£,ÀÌ¸§ ÀÔ·Â½Ã °èÁÂÅ¬·¡½º·Î ¤¡
-		this.totalAccount++; //°èÁÂ¼ö Ãß°¡
-		System.out.println(name+"°èÁÂ°¡ »ý¼ºµÇ¾ú½À´Ï´Ù.");
+	public void addAccount(String accountNo, String name) {//ï¿½ï¿½ï¿½Â»ï¿½ï¿½ï¿½
+		this.accounts.add(new Account(accountNo,name));//ï¿½ï¿½ï¿½Â¹ï¿½È£,ï¿½Ì¸ï¿½ ï¿½Ô·Â½ï¿½ ï¿½ï¿½ï¿½ï¿½Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+		this.totalAccount++; //ï¿½ï¿½ï¿½Â¼ï¿½ ï¿½ß°ï¿½
+		System.out.println(name+"ï¿½ï¿½ï¿½Â°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 	}
 	
-	public Account getAccount(String accountNo) {//°èÁÂÃ£±â(¹øÈ£)
+	public Account getAccount(String accountNo) {//ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½(ï¿½ï¿½È£)
 		Account findNum=null;
 		for(int i=0; i<accounts.size(); i++) {
 			if(accounts.get(i).getAccountNo().equals(accountNo)) {
 				findNum=accounts.get(i);
 			}else if(findNum==null) {
-				System.out.println("Ã£´Â°èÁÂ°¡ ¾ø½À´Ï´Ù.");
+				System.out.println("Ã£ï¿½Â°ï¿½ï¿½Â°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			}
 			return findNum;
 		}
@@ -35,17 +35,17 @@ public class Bank {
 			if(accounts.get(i).getName().equals(name)) {
 				findNamelist.add(accounts.get(i));
 			}else if(findNamelist.get(0)==null) {
-				System.out.println("Ã£´Â°èÁÂ°¡ ¾ø½À´Ï´Ù");
+				System.out.println("Ã£ï¿½Â°ï¿½ï¿½Â°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½");
 			}
 		
 		}
 		return findNamelist;
 	}
 	
-	public ArrayList<Account>getAccounts(){//°èÁÂ¸ñ·Ïº¸±â
+	public ArrayList<Account>getAccounts(){//ï¿½ï¿½ï¿½Â¸ï¿½Ïºï¿½ï¿½ï¿½
 		return accounts; //??
 	}
-	public int getTotalAccount() { //ÃÑ°èÁÂ¼ö ¹ÝÈ¯
+	public int getTotalAccount() { //ï¿½Ñ°ï¿½ï¿½Â¼ï¿½ ï¿½ï¿½È¯
 		return totalAccount;//??
 	}
 

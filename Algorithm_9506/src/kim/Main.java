@@ -1,12 +1,14 @@
 package kim;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class Main {
 
 	public static void main(String[] args) {
-		String input = null; //문자를 받을곳 
+		Scanner sc = new Scanner(System.in);
+		String input = sc.n
 		ArrayList<Integer> arr = new ArrayList<Integer>(); //리스트 생성 
 		
 		if(!(input.equals("-1"))) { //input에 들어간 것이 -1이 아니면 

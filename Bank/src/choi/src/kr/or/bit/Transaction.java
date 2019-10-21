@@ -1,12 +1,12 @@
-package kr.or.bit;
+package choi.src.kr.or.bit;
 
 import java.util.Calendar;
 
-public class Transaction { //***°Å·¡³»¿ª***
+public class Transaction { //***ï¿½Å·ï¿½ï¿½ï¿½ï¿½ï¿½***
 	private String transactionDate;
 	private String transactionTime;
 	private String kind;
-	private long amount;//°Å·¡±Ý¾×
+	private long amount;//ï¿½Å·ï¿½ï¿½Ý¾ï¿½
 	private long balance;
 
 	public Transaction(String king, long amount, long balance) {
@@ -30,7 +30,7 @@ public class Transaction { //***°Å·¡³»¿ª***
 
 	@Override
 	public String toString() {
-		return " ³¯Â¥=" + transactionDate + " / ½Ã°£=" + transactionTime +
-				" / °Å·¡À¯Çü="+ kind + " / °Å·¡±Ý¾×=" + amount + " / ÀÜ¾×=" + balance;
+		return " ï¿½ï¿½Â¥=" + transactionDate + " / ï¿½Ã°ï¿½=" + transactionTime +
+				" / ï¿½Å·ï¿½ï¿½ï¿½ï¿½ï¿½="+ kind + " / ï¿½Å·ï¿½ï¿½Ý¾ï¿½=" + amount + " / ï¿½Ü¾ï¿½=" + balance;
 	}
 }
