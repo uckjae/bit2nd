@@ -47,7 +47,7 @@ import java.util.Stack;
 public class Main_lee {
     public static Stack<Integer> mystack = new Stack<>();
 
-    public int
+    
 
     public static void main(String[] args) {
 
