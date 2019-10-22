@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../Algorithm_10828/Algorithm_10828.iml" filepath="$PROJECT_DIR$/../Algorithm_10828/Algorithm_10828.iml" />
       <module fileurl="file://$PROJECT_DIR$/Algorithm_11653.iml" filepath="$PROJECT_DIR$/Algorithm_11653.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Algorithm_1874/Algorithm_1874.iml" filepath="$PROJECT_DIR$/../Algorithm_1874/Algorithm_1874.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Algoritm_2443_2444_2445/Algorithm_243_2444_2445.iml" filepath="$PROJECT_DIR$/../Algoritm_2443_2444_2445/Algorithm_243_2444_2445.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Algorithm_2609/Algorithm_2609.iml" filepath="$PROJECT_DIR$/../Algorithm_2609/Algorithm_2609.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Algorithm_2747/Algorithm_2747.iml" filepath="$PROJECT_DIR$/../Algorithm_2747/Algorithm_2747.iml" />
@@ -11,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/../Algorithm_3067/Algorithm_3067.iml" filepath="$PROJECT_DIR$/../Algorithm_3067/Algorithm_3067.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Algorithm_9506/Algorithm_9506.iml" filepath="$PROJECT_DIR$/../Algorithm_9506/Algorithm_9506.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Bank/Bank.iml" filepath="$PROJECT_DIR$/../Bank/Bank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../JavaStudy/JavaStudy.iml" filepath="$PROJECT_DIR$/../JavaStudy/JavaStudy.iml" />
     </modules>
   </component>
 </project>
