@@ -45,7 +45,7 @@ class FieldInitValue{ //필드 생성
 	byte byteField; //byte 타입 -128 ~ 127
 	short shortField; //short 타입 실수 32.xxx ~ 32.xxx  
 	int intField; //-21억 ~ 21억
-	long longField; //-999 ~ 999
+	long longField; //-999... ~ 999...
 	
 	boolean booleanField; //~~ 여부 확인 
 	char charField; //유니코드 
