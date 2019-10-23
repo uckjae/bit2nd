@@ -1,7 +1,8 @@
 package lee;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.Stack;
 
 /*
@@ -49,15 +50,77 @@ import java.util.Stack;
 -
  */
 public class Main_lee {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        Stack<Integer> input = new Stack<>();
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+
+        Queue<Integer> input = new ArrayDeque<>();
+        Stack<Integer> numbers = new Stack<>();
+        Stack<Integer> mkStack = new Stack<>();
+        Stack<Integer> mkarray = new Stack<>();
+
+
+        StringBuilder answer = new StringBuilder();
         int n = Integer.parseInt(br.readLine());
         int m =0;
         for(int i=0; i<n;i++){
             m = Integer.parseInt(br.readLine());
-            input.push(m);
+            input.add(m);
+            numbers.push(n-i);
         }
+        br.close();
+        while (!(numbers.isEmpty()) && !(mkStack.isEmpty())) {
+            int in = input.peek();
+            int num = numbers.peek();
+            int st = (!mkStack.isEmpty())? mkStack.peek():0;
+            int arr =(!mkarray.isEmpty())? mkarray.peek():0;
+            if (input.peek() == numbers.peek()) {
+                input.poll();
+                mkStack.push(numbers.pop());
+                answer.append("+\n");
+                mkarray.push(mkStack.pop());
+                answer.append("-\n");
+            } else if (input.peek() > numbers.peek()) {
+                mkStack.push(numbers.pop());
+                answer.append("+\n");
+            } else if (input.peek() < numbers.peek()) {
+                if (mkStack.peek() == input.peek()) {
+                    input.poll();
+                    mkarray.push(mkStack.pop());
+                    answer.append("-\n");
+                } else if (mkStack.peek() > input.peek()) {
+                    mkStack.pop();
+                    answer.append("-\n");
+                } else {
+                    answer.replace(0, answer.length() - 1, "");
+                    answer.append("no");
+                    break;
+                }
+            }
+        }
+        bw.write(answer.toString());
+        if(!mkStack.isEmpty()){
+            bw.write("\n mkStack:"+mkStack.toString());
+        }else {
+            bw.write("mkstack 비었음");
+        }
+        if(!numbers.isEmpty()){
+            bw.write("\n numbers:"+numbers.toString());
+        }else {
+            bw.write("numbers 비었음");
+        }
+        if(!input.isEmpty()){
+            bw.write("\n input:"+input.toString());
+        }else {
+            bw.write("input 비었음");
+        }
+
+        bw.write(mkarray.toString());
+        bw.close();
+
+
+
 
     }
 }
