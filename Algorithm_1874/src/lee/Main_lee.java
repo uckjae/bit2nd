@@ -100,23 +100,23 @@ public class Main_lee {
             }
         }
         bw.write(answer.toString());
-        if(!mkStack.isEmpty()){
-            bw.write("\n mkStack:"+mkStack.toString());
-        }else {
-            bw.write("mkstack 비었음");
-        }
-        if(!numbers.isEmpty()){
-            bw.write("\n numbers:"+numbers.toString());
-        }else {
-            bw.write("numbers 비었음");
-        }
-        if(!input.isEmpty()){
-            bw.write("\n input:"+input.toString());
-        }else {
-            bw.write("input 비었음");
-        }
-
-        bw.write(mkarray.toString());
+//        if(!mkStack.isEmpty()){
+//            bw.write("\n mkStack:"+mkStack.toString());
+//        }else {
+//            bw.write("mkstack 비었음");
+//        }
+//        if(!numbers.isEmpty()){
+//            bw.write("\n numbers:"+numbers.toString());
+//        }else {
+//            bw.write("numbers 비었음");
+//        }
+//        if(!input.isEmpty()){
+//            bw.write("\n input:"+input.toString());
+//        }else {
+//            bw.write("input 비었음");
+//        }
+//
+//        bw.write(mkarray.toString());
         bw.close();
 
 
