@@ -28,6 +28,21 @@ package kim;
  	this : 객체 외부에서 인스턴스 멤버에 접근하기 위해 참조 변수를 사용하는 것과 마찬가지로 객체 내부에서도 인스턴스 멤버에 접근하기 위해 this를 사용 할 수 있습니다.
  	정적 : "고정된"이란 의미 입니다. 정적멤버는 클래스에 고정된 멤버로서 객체를 생성하지 않고 사용할 수 있는 필드와 메소드를 말합니다.
  	
+ 	싱클톤 : 프로그램에서 단 하나의 객체만 생성하도록 보장 해야하는 경우 단 하나만 생성하게 하는것
+ 	
+ 	final : "최종적" 이란 뜻을 가지고 있다. final 필드는 초기값이 저장되면 이것이 최종적인 값이 되어서 프로그램 실행 도중에 수정 할 수 없다는 것
+ 	상수 : 일반적으로 불변의 값 ex) 원주율 , 지구의 무게 , 둘레 
+ 	
+ 	접근제한자 : 접근을 제한하기 위해 사용
+ 	public : 외부 클래스가 자유롭게 사용가능
+ 	protected : 같은 패키지 or 자식 클래스에서 사용가능
+ 	private : 개인적인것 , 외부에서 사용 불가능
+ 	default : 같은 패키지에 소속된 클래스에서 사용 가능 
+ 	
+ 	getter() : private을 확인하는 작업을 허용
+ 	setter() : private을 수정 작업을 허용 
+ 	
+ 	
  */
 class Computer {
 	int sum1(int[] values) {
@@ -153,6 +168,105 @@ class Car4 {
 	
 }
 
+class Calculator7 {
+	static double pi = 3.14159;
+	
+	static int plus(int x,int y) {
+		return x + y;
+	}
+	
+	static int minus(int x, int y) {
+		return x - y;
+	}
+}
+
+class Singleton {
+	private static Singleton singleton = new Singleton();
+	
+	private Singleton() {}
+	
+	static Singleton getInstance() {
+		return singleton;
+	}
+}
+
+class Person {
+	final String nation1 = "Korean";
+	final String ssn7;
+	String name7;
+	public Person(String ssn7, String name7) {
+		this.ssn7 = ssn7;
+		this.name7 = name7;
+	}
+	
+}
+
+class Earth {
+	static final double EARTH_RADIUS = 6400;
+	static final double EARTH_AREA = 4 * Math.PI * EARTH_RADIUS * EARTH_RADIUS;
+}
+
+class A {
+	public int field1;
+	int field2;
+	private int field3;
+	
+	public A() {
+		field1 = 1;
+		field2 = 1;
+		field3 = 1;
+		
+		method1();
+		method2();
+		method3();
+	}
+	
+	public void method1() {}
+	 void method2() {}
+	private void method3() {}
+	
+}
+
+class B {
+	public B() {
+		A a = new A();
+		a.field1 = 1;
+		a.field2 = 1;
+		//a.field3 = 1; private 필드 접근 불가능 
+		
+		a.method1();
+		a.method2();
+ 		//a.method3(); private 메소드 접근 불가
+	}
+}
+
+class Car10 {
+	private int speed;
+	private boolean stop;
+	
+	public Car10(){
+		
+	}
+	public int getSpeed() {
+		return speed;
+	}
+	public void setSpeed(int speed) {
+		if(speed <0) {
+			this.speed = 0;
+			return;
+		}else {
+			this.speed = speed;
+		}
+	}
+	public boolean isStop() {
+		return stop;
+	}
+	public void setStop(boolean stop) {
+		this.stop = stop;
+		this.speed = 0;
+	}
+}
+
 public class OOP2_Study {	
 	public static void main(String[] args) {
 		
@@ -227,6 +341,62 @@ public class OOP2_Study {
 		
 		///////////////////////////////////////////////////////////
 		
+		double result8 = 10 * 10 * Calculator7.pi;
+		int result9 = Calculator7.plus(10, 5);
+		int result10 = Calculator7.minus(10, 5);		
+	
+		System.out.println("result8 : " + result8);
+		System.out.println("result9 : " + result9);
+		System.out.println("result10 : " + result10);
+		System.out.println();
 		
+		/////////////////////////////////////////////////////////////
+		
+			Singleton obj1 = Singleton.getInstance();
+			Singleton obj2 = Singleton.getInstance();
+			
+			if(obj1 == obj2) {
+				System.out.println("같은 Singleton 객체입니다.");
+			}else {
+				System.out.println("다른 Singleton 객체입니다.");
+			}
+			
+			System.out.println();
+		///////////////////////////////////////////////////////////
+			
+		Person p1 = new Person("123456-1234567", "홍길동");
+		
+		System.out.println(p1.nation1);
+		System.out.println(p1.ssn7);
+		System.out.println(p1.name7);
+		System.out.println();
+		//p1.nation1 = U.S.A;
+		//p1.ssn7 = 456789-1234567;
+		p1.name7 = "김유신"; 
+		
+		////////////////////////////////////////////////////////////////
+		
+		System.out.println(" 지구의 반지름 : " + Earth.EARTH_RADIUS + "km");
+		System.out.println(" 지구의 표면적 : " + Earth.EARTH_AREA + "km^2");
+		System.out.println();
+		
+		///////////////////////////////////////////////////////////////
+		
+		Car10 car10 = new Car10();
+		
+		car10.setSpeed(-50);
+		
+		System.out.println("현재 속도 : " + car10.getSpeed());
+		
+		//올바른 속도 변경 
+		car10.setSpeed(60);
+		
+		
+		//멈춤 
+		if(!car10.isStop()) {
+			car10.setStop(true);
+		}
+		System.out.println("현재속도 : " + car10.getSpeed());
 	}
+	
 }
