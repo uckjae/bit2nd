@@ -2,6 +2,7 @@ package lee;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Queue;
 import java.util.Stack;
 
 /*
@@ -51,12 +52,28 @@ import java.util.Stack;
 public class Main_lee {
     public static void main(String[] args) {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        Stack<Integer> input = new Stack<>();
+        Queue<Integer> input = new Queue();
+        Stack<Integer> result = new Stack<>();
+        StringBuilder answer = new StringBuilder();
         int n = Integer.parseInt(br.readLine());
         int m =0;
         for(int i=0; i<n;i++){
             m = Integer.parseInt(br.readLine());
-            input.push(m);
+            input.add(m);
+        }
+
+        int target = input.poll();
+        for(int i=1;i<=target;i++){
+            result.push(i);
+            answer.append("+\n");
+        }
+        answer.append("-\n");
+        target = input.poll();
+        if(target<result.peek()){
+            while(target!=result.peek()){
+                result.pop();
+                answer.appen
+            }
         }
 
     }
