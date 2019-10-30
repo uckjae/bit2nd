@@ -17,16 +17,11 @@ public class No_1874 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		List<Integer> numbers = new ArrayList<Integer>();
 
-//		int count = Integer.parseInt(br.readLine());
-		int count = 5;
-//		for (int i = 0; i < count; i++)
-//			numbers.add(Integer.parseInt(br.readLine()));
+		int count = Integer.parseInt(br.readLine());
 
-		numbers.add(1);
-		numbers.add(2);
-		numbers.add(5);
-		numbers.add(3);
-		numbers.add(4);
+		for (int i = 0; i < count; i++)
+			numbers.add(Integer.parseInt(br.readLine()));
+
 		StringBuilder result = new StringBuilder();
 		TreeSet<Integer> stackArea = new TreeSet<Integer>();
 		List<Integer> pushDatas = new ArrayList<Integer>();
@@ -41,8 +36,6 @@ public class No_1874 {
 		}
 		result.append("-");
 
-		System.out.println(stackArea);
-		System.out.println(result);
 		for (int i = 1; i < numbers.size(); i++) {
 			int pop = numbers.get(i);
 			System.out.println("pop: " + pop);
@@ -69,5 +62,7 @@ public class No_1874 {
 				result.append("-");
 			}
 		}
+		
+		System.out.println(result);
 	}
 }

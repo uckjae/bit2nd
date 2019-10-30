@@ -69,11 +69,12 @@ public class Main_lee {
                 answer.append("-");
             }
         }
+        
         if(change>=3){
-            answer.delete(0,answer.length()-1);
+            answer.delete(0,answer.length());
             answer.append("no");
         }else if(change==2&&ascend){
-            answer.delete(0,answer.length()-1);
+            answer.delete(0,answer.length());
             answer.append("no");
         }
 
