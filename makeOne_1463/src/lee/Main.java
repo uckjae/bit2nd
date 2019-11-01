@@ -10,9 +10,10 @@ public class Main {
     public static int mkOne(int n){
         int num = 0;
         if(n==1){
-            num = 0;
+            num = result[n];
         }else if(n<=3){
-            num = 1;
+            result[n] = 1;
+            num = result[n];
         }else if(result[n]!=0){
             num = result[n];
         }else{
@@ -29,7 +30,7 @@ public class Main {
             }else if(n%3==0){
                 result[n]=(mkOne(n-1)<mkOne(n/3))?result[n-1]+1:result[n/3]+1;
             }else{
-                result[n] = result[n-1]+1;
+                result[n] = mkOne(n-1)+1;
             }
             num = result[n];
         }
@@ -42,5 +43,6 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
         int answer = mkOne(n);
         System.out.println(answer);
+        br.close();
     }
 }

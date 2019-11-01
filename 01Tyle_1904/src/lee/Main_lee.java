@@ -16,7 +16,7 @@ public class Main_lee {
         else if(array[n]!=0){
             result = array[n];
         }else{
-            array[n] = numTyle(n-1)+ numTyle(n-2);
+            array[n] = (numTyle(n-1)+ numTyle(n-2))%15746;
             result = array[n];
         }
         return result;
