@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 
 
-public class Vending {
+public class Vending { //자판기
 	product coke = new product("코카콜라", 1500, 1);
 	product cider = new product("칠성 사이다", 1300, 30);
 	product power = new product("파워 에이디", 1000, 30);
@@ -27,7 +27,7 @@ public class Vending {
 		System.out.println("3.파워 에이드 : $" + power.price);
 	}
 
-	public void list() {
+	public void list() { //메뉴구성 
 		System.out.println("1.코카콜라     : $" + coke.price);
 		System.out.println("2.칠성 사이다 : $" + cider.price);
 		System.out.println("3.파워 에이드 : $" + power.price);
@@ -37,7 +37,7 @@ public class Vending {
 		System.out.println("0. 구매 취소");
 	}
 
-	public void Start() {
+	public void Start() { //자판기 사용 함수 
 		do {
 			list();
 			int choice = Integer.parseInt(sc.nextLine());
@@ -58,7 +58,7 @@ public class Vending {
 		} while (true);
 	}
 
-	public void Buy() {
+	public void Buy() { //자판기 이용 함수 
 		System.out.println("돈을 넣어주세요.");
 		this.money = Integer.parseInt(sc.nextLine());
 		if (this.money >= 1500) {
@@ -91,7 +91,7 @@ public class Vending {
 		}
 	}
 
-	public void cokebuy() {
+	public void cokebuy() { //콜라 구매 함수 
 		if (coke.count > 0) {
 			System.out.println("콜라가 나왔습니다.");
 			System.out.println();
@@ -108,7 +108,7 @@ public class Vending {
 		}
 	}
 
-	public void ciderbuy() {
+	public void ciderbuy() { //사이다 구매 함수 
 		if (cider.count > 0) {
 			System.out.println("사이다가 나왔습니다.");
 			System.out.println();
@@ -125,7 +125,7 @@ public class Vending {
 		}
 	}
 
-	public void powerbuy() {
+	public void powerbuy() { //파워에이드 구매 함수 
 		if (power.count > 0) {
 			System.out.println("파워에이드가 나왔습니다.");
 			this.money -= power.price;
@@ -140,7 +140,7 @@ public class Vending {
 		}
 	}
 
-	public void admin() {
+	public void admin() { //관리자 메뉴 
 		System.out.println("비밀번호 입력");
 		String pass = sc.nextLine();
 		do {
@@ -175,13 +175,13 @@ public class Vending {
 	 * System.out.println("없는것을 고르셨습니다."); break; } }while(true); }
 	 */
 
-	public void countsee() {
+	public void countsee() { //재고 확인 함수 
 		System.out.println("코카콜라 : " + coke.count + "개");
 		System.out.println("칠성 사이다 : " + cider.count + "개");
 		System.out.println("파워 에이드 : " + power.count + "개");
 	}
 
-	public void add() {
+	public void add() { //재고 추가 함수 
 		int amount;
 		System.out.println("넣으실 음료수를 선택하세요.");
 		System.out.println("1. 코카콜라");
