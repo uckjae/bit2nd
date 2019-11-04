@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 
 public class Vending { //자판기
-	product coke = new product("코카콜라", 1500, 1);
+	product coke = new product("코카콜라", 1500, 30);
 	product cider = new product("칠성 사이다", 1300, 30);
 	product power = new product("파워 에이디", 1000, 30);
 	Scanner sc = new Scanner(System.in);
@@ -15,6 +15,7 @@ public class Vending { //자판기
 	
 	
 	public void list1() { // 콜라보다 높은가격 일때
+		System.out.println("음료수를 골라 주세요.");
 		System.out.println("1.코카콜라     : $" + coke.price);
 		System.out.println("2.칠성 사이다 : $" + cider.price);
 		System.out.println("3.파워 에이드 : $" + power.price);		
@@ -38,6 +39,7 @@ public class Vending { //자판기
 	}
 
 	public void list2() { // 콜라보다 낮고 사이다보다 높을때
+		System.out.println("음료수를 골라 주세요.");
 		System.out.println("1.칠성 사이다 : $" + cider.price);
 		System.out.println("2.파워 에이드 : $" + power.price);
 		int choice = Integer.parseInt(sc.nextLine());
@@ -57,7 +59,8 @@ public class Vending { //자판기
 	}
 
 	public void list3() { // 사이다 보다 낮을 때
-		System.out.println("3.파워 에이드 : $" + power.price);
+		System.out.println("음료수를 골라 주세요.");
+		System.out.println("1.파워 에이드 : $" + power.price);
 		int choice = Integer.parseInt(sc.nextLine());
 
 		switch (choice) {
@@ -126,9 +129,18 @@ public class Vending { //자판기
 			this.money -= coke.price;
 			coke.count--;
 			total += coke.price;
-			outmoney = money;	
-			System.out.println(outmoney + "원");
-			System.out.println();
+			System.out.println("남은 돈 : $ " + this.money + "원");
+			addQ();
+			int choice = Integer.parseInt(sc.nextLine());
+			switch(choice) {
+			case 1: addBuy();
+					break;
+			case 2: outmoney = money;
+					System.out.println("잔돈 : $ " + outmoney + "원");
+					System.out.println();	
+					System.exit(0);
+					
+			}
 		} else {
 			System.out.println("재고가 떨어졌습니다.");
 			outmoney = money;
@@ -138,15 +150,26 @@ public class Vending { //자판기
 	}
 
 	public void ciderbuy() { //사이다 구매 함수 
-		if (cider.count > 0) {
+		if (cider.count > 0 && this.money >= cider.price) {
 			System.out.println("사이다가 나왔습니다.");
 			System.out.println();
 			this.money -= cider.price;
 			cider.count--;
 			total += cider.price;
-			outmoney = money;
-			System.out.println(outmoney + "원");
-			System.out.println();
+			System.out.println("남은 돈 : $ " + this.money + "원");
+			addQ();
+			
+			int choice = Integer.parseInt(sc.nextLine());
+			switch(choice) {
+			case 1: addBuy();
+					break;
+			case 2: outmoney = money;
+					System.out.println("잔돈 : $ " + outmoney + "원");
+					System.out.println();	
+					System.exit(0);
+					
+			}
+			
 		} else {
 			System.out.println("재고가 떨어졌습니다.");
 			outmoney = money;
@@ -156,13 +179,23 @@ public class Vending { //자판기
 	}
 
 	public void powerbuy() { //파워에이드 구매 함수 
-		if (power.count > 0) {
+		if (power.count > 0 && this.money >= power.price) {
 			System.out.println("파워에이드가 나왔습니다.");
 			this.money -= power.price;
 			power.count--;
 			total += power.price;
-			outmoney = money;
-			System.out.println(outmoney + "원");
+			System.out.println("남은 돈 : $ " + this.money + "원");
+			addQ();
+			int choice = Integer.parseInt(sc.nextLine());
+			switch(choice) {
+			case 1: addBuy();
+					break;
+			case 2: outmoney = money;
+					System.out.println("잔돈 : $ " + outmoney + "원");
+					System.out.println();	
+					System.exit(0);
+					
+			}
 		} else {
 			System.out.println("재고가 떨어졌습니다.");
 			outmoney = money;
@@ -280,7 +313,40 @@ public class Vending { //자판기
 	public void sales() {
 		System.out.println("총 매출 확인 : $ " + total + "원");
 	}
-
+	
+	public void addBuy() {
+		if(this.money < power.price) {
+			System.out.println("돈을 더 넣어주세요.");
+			money = Integer.parseInt(sc.nextLine());
+			if (this.money >= 1500) {
+				list1();
+			} else if (this.money >= 1300) {
+				list2();
+			} else if (this.money >= 1000) {
+				list3();
+			} else if(this.money <= 900){
+				System.out.println("살 수 있는 음료수가 없습니다.");
+				System.out.println();
+				list();
+			}else {
+				if (this.money >= 1500) {
+					list1();
+				} else if (this.money >= 1300) {
+					list2();
+				} else if (this.money >= 1000) {
+					list3();
+				} else {
+					System.out.println("살 수 있는 음료수가 없습니다.");
+					System.out.println();
+					list();
+				}
+			}
+				
+			
+		
+		
+	}
+	}
 	public static void main(String[] args) {
 
 		Vending v = new Vending();
