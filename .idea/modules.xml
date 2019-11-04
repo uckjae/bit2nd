@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/01Tyle_1904/01Tyle_1904.iml" filepath="$PROJECT_DIR$/01Tyle_1904/01Tyle_1904.iml" />
       <module fileurl="file://$PROJECT_DIR$/Algorithm_1011/Algorithm_1011.iml" filepath="$PROJECT_DIR$/Algorithm_1011/Algorithm_1011.iml" />
       <module fileurl="file://$PROJECT_DIR$/Algorithm_11653/Algorithm_11653.iml" filepath="$PROJECT_DIR$/Algorithm_11653/Algorithm_11653.iml" />
       <module fileurl="file://$PROJECT_DIR$/Algorithm_1874/Algorithm_1874.iml" filepath="$PROJECT_DIR$/Algorithm_1874/Algorithm_1874.iml" />
@@ -12,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/Algorithm_3067/Algorithm_3067.iml" filepath="$PROJECT_DIR$/Algorithm_3067/Algorithm_3067.iml" />
       <module fileurl="file://$PROJECT_DIR$/Algorithm_9506/Algorithm_9506.iml" filepath="$PROJECT_DIR$/Algorithm_9506/Algorithm_9506.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bank/Bank.iml" filepath="$PROJECT_DIR$/Bank/Bank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/makeOne_1463/makeOne_1463.iml" filepath="$PROJECT_DIR$/makeOne_1463/makeOne_1463.iml" />
     </modules>
   </component>
 </project>
