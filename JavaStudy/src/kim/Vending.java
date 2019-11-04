@@ -11,20 +11,64 @@ public class Vending { //자판기
 	Scanner sc = new Scanner(System.in);
 	int money;
 	int outmoney;
-
+	int total;
+	
+	
 	public void list1() { // 콜라보다 높은가격 일때
 		System.out.println("1.코카콜라     : $" + coke.price);
 		System.out.println("2.칠성 사이다 : $" + cider.price);
-		System.out.println("3.파워 에이드 : $" + power.price);
+		System.out.println("3.파워 에이드 : $" + power.price);		
+		int choice = Integer.parseInt(sc.nextLine());
+
+		switch (choice) {
+		case 1:
+			cokebuy();
+			break;
+		case 2:
+			ciderbuy();
+			break;
+		case 3:
+			powerbuy();
+			break;
+		default:
+			System.out.println("없는것을 고르셨습니다.");
+			System.out.println();
+			break;
+		}
 	}
 
 	public void list2() { // 콜라보다 낮고 사이다보다 높을때
-		System.out.println("2.칠성 사이다 : $" + cider.price);
-		System.out.println("3.파워 에이드 : $" + power.price);
+		System.out.println("1.칠성 사이다 : $" + cider.price);
+		System.out.println("2.파워 에이드 : $" + power.price);
+		int choice = Integer.parseInt(sc.nextLine());
+
+		switch (choice) {
+		case 1:
+			ciderbuy();
+			break;
+		case 2:
+			powerbuy();
+			break;
+		default:
+			System.out.println("없는것을 고르셨습니다.");
+			System.out.println();
+			break;
+		}
 	}
 
 	public void list3() { // 사이다 보다 낮을 때
 		System.out.println("3.파워 에이드 : $" + power.price);
+		int choice = Integer.parseInt(sc.nextLine());
+
+		switch (choice) {
+		case 1:
+			powerbuy();
+			break;
+		default:
+			System.out.println("없는것을 고르셨습니다.");
+			System.out.println();
+			break;
+		}
 	}
 
 	public void list() { //메뉴구성 
@@ -72,32 +116,17 @@ public class Vending { //자판기
 			System.out.println();
 			list();
 		}
-		int choice = Integer.parseInt(sc.nextLine());
-
-		switch (choice) {
-		case 1:
-			cokebuy();
-			break;
-		case 2:
-			ciderbuy();
-			break;
-		case 3:
-			powerbuy();
-			break;
-		default:
-			System.out.println("없는것을 고르셨습니다.");
-			System.out.println();
-			break;
-		}
+		
 	}
 
 	public void cokebuy() { //콜라 구매 함수 
-		if (coke.count > 0) {
+		if (coke.count > 0 && this.money >= coke.price) {
 			System.out.println("콜라가 나왔습니다.");
 			System.out.println();
 			this.money -= coke.price;
 			coke.count--;
-			outmoney = money;
+			total += coke.price;
+			outmoney = money;	
 			System.out.println(outmoney + "원");
 			System.out.println();
 		} else {
@@ -114,6 +143,7 @@ public class Vending { //자판기
 			System.out.println();
 			this.money -= cider.price;
 			cider.count--;
+			total += cider.price;
 			outmoney = money;
 			System.out.println(outmoney + "원");
 			System.out.println();
@@ -130,6 +160,7 @@ public class Vending { //자판기
 			System.out.println("파워에이드가 나왔습니다.");
 			this.money -= power.price;
 			power.count--;
+			total += power.price;
 			outmoney = money;
 			System.out.println(outmoney + "원");
 		} else {
@@ -147,14 +178,20 @@ public class Vending { //자판기
 			if (pass.equals("qwer")) {
 				System.out.println("1. 재고확인");
 				System.out.println("2. 재고추가");
-				System.out.println("3. 메뉴로 이동");
+				System.out.println("3. 재고빼기");
+				System.out.println("4. 총 매출 확인");
+				System.out.println("5. 메뉴로 이동");
 				int choice = Integer.parseInt(sc.nextLine());
 				switch(choice) {
 				case 1: countsee();
 						break;
 				case 2: add();
 						break;
-				case 3: Start();
+				case 3: minus();
+						break;
+				case 4: sales();
+						break;
+				case 5: Start();
 						break;
 				default : System.out.println("없는것을 고르셨습니다.");		
 				}
@@ -206,6 +243,42 @@ public class Vending { //자판기
 					break;
 		}
 		
+	}
+	
+	public void minus() {
+		int amount;
+		System.out.println("빼실 음료수를 선택하세요.");
+		System.out.println("1. 코카콜라");
+		System.out.println("2. 칠성 사이다");
+		System.out.println("3. 파워 에이드");
+		
+		int choice = Integer.parseInt(sc.nextLine());
+		switch(choice) {
+		case 1 : System.out.println("몇개 빼시겠습니까?");
+			amount = Integer.parseInt(sc.nextLine());
+			coke.count -= amount;
+			break;
+		case 2 : System.out.println("몇개 빼시겠습니까?");
+				amount = Integer.parseInt(sc.nextLine());
+				cider.count -= amount;
+				break;
+		case 3 : System.out.println("몇개 빼시겠습니까?");
+					amount = Integer.parseInt(sc.nextLine());
+					power.count -= amount;
+					break;
+		default : System.out.println("없는것을 고르셨습니다.");
+					break;
+		}
+	}
+	
+	public void addQ() {
+		System.out.println("더 구매 하시겠습니까?");
+		System.out.println("1. 추가 구매");
+		System.out.println("2. 구매 취소");
+	}
+	
+	public void sales() {
+		System.out.println("총 매출 확인 : $ " + total + "원");
 	}
 
 	public static void main(String[] args) {
