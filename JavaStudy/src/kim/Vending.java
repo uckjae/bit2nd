@@ -376,7 +376,7 @@ public class Vending { //자판기
 	public void addBuy() {
 		if(this.money < power.price) {
 			System.out.println("돈을 더 넣어주세요.");
-			money = Integer.parseInt(sc.nextLine());
+			money += Integer.parseInt(sc.nextLine());
 			if (this.money >= 1500) {
 				list1();
 			} else if (this.money >= 1300) {
@@ -388,7 +388,7 @@ public class Vending { //자판기
 				System.out.println();
 				list();
 			}else {
-				if (this.money >= 1500) {
+				if (this.money >= coke.price) {
 					list1();
 				} else if (this.money >= 1300) {
 					list2();

@@ -73,6 +73,7 @@ class Vending {
 	void buy (int num) {		
 		if(money < drink[num].price) {
 			System.out.println("잔액이 부족합니다");
+			charge=money;
 			return;
 		} else {
 			charge = money - drink[num].price ; 
