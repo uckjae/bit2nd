@@ -138,7 +138,6 @@ public class Vending { //자판기
 				System.out.println("돈이 적거나 음료수 수량이 부족합니다");
 				list();
 			}
-			
 			int choice = Integer.parseInt(sc.nextLine());
 			switch(choice) {
 			case 1: addBuy();
@@ -149,10 +148,8 @@ public class Vending { //자판기
 					System.exit(0);
 			case 3: list();
 					break;
-			default: System.out.println("없는 메뉴 입니다.");		
-					break;
 			}
-			}else {
+		} else {
 			System.out.println("재고가 떨어졌습니다.");
 			outmoney = money;
 			System.out.println("그대로 돈이 "+outmoney + "원 나왔습니다.");
@@ -376,10 +373,10 @@ public class Vending { //자판기
 		
 	}
 	
-	public void addBuy() { //추가 구매함수
+	public void addBuy() {
 		if(this.money < power.price) {
 			System.out.println("돈을 더 넣어주세요.");
-			this.money += Integer.parseInt(sc.nextLine());
+			money += Integer.parseInt(sc.nextLine());
 			if (this.money >= 1500) {
 				list1();
 			} else if (this.money >= 1300) {
@@ -391,7 +388,7 @@ public class Vending { //자판기
 				System.out.println();
 				list();
 			}else {
-				if (this.money >= 1500) {
+				if (this.money >= coke.price) {
 					list1();
 				} else if (this.money >= 1300) {
 					list2();
