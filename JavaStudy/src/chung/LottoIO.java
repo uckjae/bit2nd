@@ -4,19 +4,24 @@ package chung;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 
 public class LottoIO {
 
-	public Set<Integer> makeLotto() {
-		Set<Integer> lottoset = new HashSet<Integer>();
+	public List makeLotto() {
+		Set lottoset = new HashSet();
 		
 		for(int i = 0; i < 6; i++) {
 			int num = (int) (Math.random()*45 +1);
 			lottoset.add(num);
 		}	
-		return lottoset;
+		List list = new LinkedList(lottoset);
+		Collections.sort(list);
+		return list;
 	}
 	
 	public void fileLotto() {
