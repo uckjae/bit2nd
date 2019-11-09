@@ -16,7 +16,7 @@ public class LottoIO {
 	public List makeLotto() {
 		Set lottoset = new HashSet();
 
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; lottoset.size() < 6; i++) {
 			int num = (int) (Math.random() * 45 + 1);
 			lottoset.add(num);
 		}
