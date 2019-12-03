@@ -26,8 +26,7 @@ import java.io.IOException;
 계단의 개수는 300이하의 자연수이고, 계단에 쓰여 있는 점수는 10,000이하의 자연수이다.
 6/10/20/15/25/10/20 =>75
 */
-public class Main {
-    public static int oneStairs = 0;
+public class Main {    public static int oneStairs = 0;
 
     public static int nextStair(int indexOfStair,int[] totalStair){
         int nextStair = 0;
